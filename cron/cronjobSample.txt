@@ -1,0 +1,1 @@
+0 */1 * * * cd /path/to/venv/ && /path/to/venv/bin/python3 /path/to/venv/icarus.py /path/to/venv/src/.clients > /path/to/venv/errorLogs/output.log 2>&1
