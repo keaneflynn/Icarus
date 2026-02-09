@@ -1,6 +1,5 @@
 # Icarus
 **Author**: Keane Flynn\
-**Organization**: Summit Lake Paiute Tribe\
 **Date**: 06/20/2025\
 **Contact**: keaneflynn1@gmail.com
 
@@ -8,8 +7,8 @@
 Icarus is a program that connects to our BirdNet detection stations around the 
 reservation to pull bird and frog audio detections and append them to our respective
 databases. This program will connect to the raspberry pis, gather the most recent 
-detections from its SQLite database and append those records to our postgres 
-database on our server. It can be run at whatever frequency desired through 
+detections from its SQLite database and append those records to a postgres 
+database. It can be run at whatever frequency desired through 
 systemd or cronjob, but every hour or so should be more than adequate.
 
 ## Prerequisites
@@ -84,8 +83,8 @@ over to Raspberry Pi 5s and run [Nachtzuster's forked repo of BirdNET that is
 functional for Pi 5s and is maintained](https://github.com/Nachtzuster/BirdNET-Pi).
 
 The only changes that will need to be made to the client configuration to each 
-raspberry pi from the OEM setup is to add the custom bird species list for the
-reservation put together by Megan Yount. This can be found [in the src/ directory
+raspberry pi from the OEM setup is to add the custom bird species list.
+This can be found [in the src/ directory
 of the respository](https://github.com/SummitLakeNRD/Icarus/blob/main/src/bird_list.txt)
 and needs to be placed in the `scripts/` subdirectory of the birdnet client build.
 
@@ -141,7 +140,7 @@ PORT=<PORT>
 ## How To Use
 Issue the following command in your terminal to clone the repository:
 ```
-git clone https://github.com/SummitLakeNRD/Icarus.git
+git clone https://github.com/keaneflynn/Icarus.git
 ```
 You will then need to `cd Icarus/` and create a python virtual environment to 
 install the correct dependencies.
@@ -162,7 +161,7 @@ While this program will be run as a cronjon, it can be tested by running
 
 ### Running as Cronjob
 This program is primarily designed to be run on a server as a cronjob.
-To SLPT staff, in short, this means that given the proper instruction, it will
+This means that given the proper instruction, it will
 run continuously on start up and restart if the program crashes for some reason.
 To make this work, you will need to modify the crontab file:
 ```
